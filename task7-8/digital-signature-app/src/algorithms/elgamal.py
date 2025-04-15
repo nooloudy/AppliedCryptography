@@ -11,8 +11,18 @@ def generate_keys(key_size=2048):
     public_key = {"p": p, "g": g, "y": y}  # Public key components
     return {"private_key": private_key, "public_key": public_key}
 
-def sign_message(private_key, message):
-    """Sign a message using ElGamal."""
+def save_key(key, filepath):
+    """Save a key (public or private) to a file."""
+    with open(filepath, "w") as file:
+        file.write(str(key))
+
+def load_key(filepath):
+    """Load a key (public or private) from a file."""
+    with open(filepath, "r") as file:
+        return eval(file.read())  # Convert string back to dictionary
+
+def sign_message(private_key, hashed_message):
+    """Sign a hashed message using ElGamal."""
     from math import gcd
 
     p, g, x = private_key["p"], private_key["g"], private_key["x"]
@@ -25,17 +35,19 @@ def sign_message(private_key, message):
 
     r = pow(g, k, p)  # Compute r
     k_inv = number.inverse(k, p - 1)  # Compute modular inverse of k
-    hashed_message = int.from_bytes(SHA256.new(message.encode()).digest(), byteorder='big')  # Hash the message
-    s = (k_inv * (hashed_message - x * r)) % (p - 1)  # Compute s
+    hashed_int = int.from_bytes(SHA256.new(hashed_message).digest(), byteorder='big')  # Convert hash to integer
+    s = (k_inv * (hashed_int - x * r)) % (p - 1)  # Compute s
     return {"r": r, "s": s}
 
-def verify_signature(public_key, message, signature):
+def verify_signature(public_key, hashed_message, signature):
     """Verify an ElGamal signature."""
     p, g, y = public_key["p"], public_key["g"], public_key["y"]
     r, s = signature["r"], signature["s"]
+
     if not (0 < r < p and 0 < s < p - 1):  # Check validity of r and s
         return False
-    hashed_message = int.from_bytes(SHA256.new(message.encode()).digest(), byteorder='big')  # Hash the message
-    v1 = pow(g, hashed_message, p)  # Compute g^H(m) mod p
+
+    hashed_int = int.from_bytes(SHA256.new(hashed_message).digest(), byteorder='big')  # Convert hash to integer
+    v1 = pow(g, hashed_int, p)  # Compute g^H(m) mod p
     v2 = (pow(y, r, p) * pow(r, s, p)) % p  # Compute y^r * r^s mod p
     return v1 == v2
