@@ -1,5 +1,7 @@
 from Crypto.Util import number
 from Crypto.Hash import SHA256
+import json  # Add import for JSON serialization
+import base64  # Add import for Base64 encoding/decoding
 
 def generate_keys(key_size=2048):
     """Generate ElGamal key pair."""
@@ -7,8 +9,11 @@ def generate_keys(key_size=2048):
     g = number.getRandomRange(2, p - 1)  # Generate a generator
     x = number.getRandomRange(1, p - 1)  # Private key
     y = pow(g, x, p)  # Public key
-    private_key = {"p": p, "g": g, "x": x}  # Private key components
-    public_key = {"p": p, "g": g, "y": y}  # Public key components
+
+    # Serialize keys as JSON strings
+    private_key = json.dumps({"p": p, "g": g, "x": x})
+    public_key = json.dumps({"p": p, "g": g, "y": y})
+
     return {"private_key": private_key, "public_key": public_key}
 
 def save_key(key, filepath):
@@ -19,12 +24,13 @@ def save_key(key, filepath):
 def load_key(filepath):
     """Load a key (public or private) from a file."""
     with open(filepath, "r") as file:
-        return eval(file.read())  # Convert string back to dictionary
+        return json.loads(file.read())  # Safely parse JSON string
 
-def sign_message(private_key, hashed_message):
+def sign_message(private_key_json, hashed_message):
     """Sign a hashed message using ElGamal."""
     from math import gcd
 
+    private_key = json.loads(private_key_json)  # Deserialize JSON string
     p, g, x = private_key["p"], private_key["g"], private_key["x"]
 
     # Generate a random value k that is coprime with (p - 1)
@@ -39,15 +45,20 @@ def sign_message(private_key, hashed_message):
     s = (k_inv * (hashed_int - x * r)) % (p - 1)  # Compute s
     return {"r": r, "s": s}
 
-def verify_signature(public_key, hashed_message, signature):
+def verify_signature(public_key_json, hashed_message, signature):
     """Verify an ElGamal signature."""
+    public_key = json.loads(public_key_json)  # Deserialize JSON string
     p, g, y = public_key["p"], public_key["g"], public_key["y"]
     r, s = signature["r"], signature["s"]
 
     if not (0 < r < p and 0 < s < p - 1):  # Check validity of r and s
         return False
 
-    hashed_int = int.from_bytes(SHA256.new(hashed_message).digest(), byteorder='big')  # Convert hash to integer
+    # Ensure hashed_message is bytes
+    if not isinstance(hashed_message, bytes):
+        raise TypeError("hashed_message must be a bytes-like object")
+
+    hashed_int = int.from_bytes(hashed_message, byteorder='big')  # Convert hash to integer
     v1 = pow(g, hashed_int, p)  # Compute g^H(m) mod p
     v2 = (pow(y, r, p) * pow(r, s, p)) % p  # Compute y^r * r^s mod p
     return v1 == v2
