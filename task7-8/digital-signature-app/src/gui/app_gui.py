@@ -15,7 +15,7 @@ class AppGUI(QtWidgets.QWidget):  # Renamed from DigitalSignatureApp to AppGUI
 
     def init_ui(self):
         self.setWindowTitle('Digital Signature Application')
-        self.setGeometry(100, 100, 600, 400)
+        self.setGeometry(100, 100, 800, 600)  # Увеличен размер окна
 
         # Algorithm Selection
         self.algorithm_label = QtWidgets.QLabel('Select Algorithm:')
@@ -37,6 +37,7 @@ class AppGUI(QtWidgets.QWidget):  # Renamed from DigitalSignatureApp to AppGUI
 
         # Signing Section
         self.message_input = QtWidgets.QTextEdit(self)
+        self.message_input.setPlaceholderText("Enter the message to sign here...")
         self.sign_button = QtWidgets.QPushButton('Sign Message')
         self.sign_button.clicked.connect(self.sign_message)
 
@@ -45,21 +46,86 @@ class AppGUI(QtWidgets.QWidget):  # Renamed from DigitalSignatureApp to AppGUI
         self.verify_button.clicked.connect(self.verify_signature)
 
         # Layout
-        layout = QtWidgets.QVBoxLayout()
-        layout.addWidget(self.algorithm_label)
-        layout.addWidget(self.algorithm_combo)
-        layout.addWidget(self.hashing_label)
-        layout.addWidget(self.hashing_combo)
-        layout.addWidget(self.key_gen_button)
-        layout.addWidget(QtWidgets.QLabel('Generated Keys:'))
-        layout.addWidget(self.keys_display)
-        layout.addWidget(self.save_keys_button)
-        layout.addWidget(QtWidgets.QLabel('Message to Sign:'))
-        layout.addWidget(self.message_input)
-        layout.addWidget(self.sign_button)
-        layout.addWidget(self.verify_button)
+        main_layout = QtWidgets.QVBoxLayout()
 
-        self.setLayout(layout)
+        # Add sections with grouping
+        algorithm_group = QtWidgets.QGroupBox("Algorithm Selection")
+        algorithm_layout = QtWidgets.QVBoxLayout()
+        algorithm_layout.addWidget(self.algorithm_label)
+        algorithm_layout.addWidget(self.algorithm_combo)
+        algorithm_layout.addWidget(self.hashing_label)
+        algorithm_layout.addWidget(self.hashing_combo)
+        algorithm_group.setLayout(algorithm_layout)
+
+        key_group = QtWidgets.QGroupBox("Key Management")
+        key_layout = QtWidgets.QVBoxLayout()
+        key_layout.addWidget(self.key_gen_button)
+        key_layout.addWidget(QtWidgets.QLabel('Generated Keys:'))
+        key_layout.addWidget(self.keys_display)
+        key_layout.addWidget(self.save_keys_button)
+        key_group.setLayout(key_layout)
+
+        signing_group = QtWidgets.QGroupBox("Message Signing")
+        signing_layout = QtWidgets.QVBoxLayout()
+        signing_layout.addWidget(QtWidgets.QLabel('Message to Sign:'))
+        signing_layout.addWidget(self.message_input)
+        signing_layout.addWidget(self.sign_button)
+        signing_group.setLayout(signing_layout)
+
+        verification_group = QtWidgets.QGroupBox("Signature Verification")
+        verification_layout = QtWidgets.QVBoxLayout()
+        verification_layout.addWidget(self.verify_button)
+        verification_group.setLayout(verification_layout)
+
+        # Add groups to main layout
+        main_layout.addWidget(algorithm_group)
+        main_layout.addWidget(key_group)
+        main_layout.addWidget(signing_group)
+        main_layout.addWidget(verification_group)
+
+        self.setLayout(main_layout)
+
+        # Apply styles
+        self.apply_styles()
+
+    def apply_styles(self):
+        self.setStyleSheet("""
+            QWidget {
+                font-family: Arial;
+                font-size: 14px;
+            }
+            QGroupBox {
+                font-weight: bold;
+                border: 1px solid gray;
+                border-radius: 5px;
+                margin-top: 10px;
+            }
+            QGroupBox::title {
+                subcontrol-origin: margin;
+                subcontrol-position: top center;
+                padding: 0 3px;
+            }
+            QPushButton {
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                padding: 10px;
+                border-radius: 5px;
+            }
+            QPushButton:hover {
+                background-color: #45a049;
+            }
+            QTextEdit {
+                border: 1px solid gray;
+                border-radius: 5px;
+                padding: 5px;
+            }
+            QComboBox {
+                border: 1px solid gray;
+                border-radius: 5px;
+                padding: 5px;
+            }
+        """)
 
     def generate_keys(self):
         algorithm = self.algorithm_combo.currentText()
