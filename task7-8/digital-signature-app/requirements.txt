@@ -1,5 +1,4 @@
 cryptography
 PyQt5
-PySide2
+tkinter
 pytest
-numpy

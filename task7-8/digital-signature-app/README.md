@@ -1,53 +1,51 @@
 # Digital Signature Application
 
-This project is a digital signature application that allows users to create and verify digital signatures using various algorithms and hashing methods. The application features a user-friendly graphical interface and supports multiple digital signature algorithms and SHA hashing algorithms.
+This project is a GUI-based Python application that allows users to create and verify digital signatures using various cryptographic algorithms and SHA hashing methods. It includes features for key generation, saving/loading keys, and file operations, along with logging and error handling.
 
 ## Features
 
-- **Digital Signature Algorithm Selection**: Choose from RSA, ElGamal, or DSA for signing messages.
-- **Hashing Algorithm Selection**: Select from SHA-256, SHA-384, or SHA-512 for hashing messages before signing.
-- **Key Generation**: Generate public and private key pairs for the selected algorithm.
-- **Digital Signature Creation**: Sign messages and display the generated digital signature.
-- **Digital Signature Verification**: Verify signatures against the original messages.
-- **File Operations**: Load and save keys, messages, and signatures to files.
-- **Logging**: Track operations and errors throughout the application.
+- **Digital Signature Algorithm Selection**: Supports RSA, ElGamal, and DSA algorithms.
+- **Hashing Algorithm Selection**: Options for SHA-256, SHA-384, and SHA-512.
+- **Key Generation**: Generate public/private key pairs and save them to user-specified files.
+- **Signature Creation**: Sign messages with selected algorithms and hashing methods.
+- **Signature Verification**: Verify signatures against messages using public keys.
+- **Logging**: All operations are logged to a separate log file for tracking.
 
 ## Project Structure
 
 ```
 digital-signature-app
 ├── src
-│   ├── algorithms
-│   │   ├── rsa.py
-│   │   ├── elgamal.py
-│   │   └── dsa.py
-│   ├── hashing
-│   │   ├── sha256.py
-│   │   ├── sha384.py
-│   │   └── sha512.py
+│   ├── main.py                # Entry point of the application
 │   ├── gui
-│   │   ├── main_window.py
-│   │   └── styles.py
+│   │   ├── app_gui.py         # GUI implementation
+│   │   └── __init__.py        # GUI package initializer
+│   ├── crypto
+│   │   ├── key_generation.py   # Key generation functions
+│   │   ├── signing.py          # Signature creation functions
+│   │   ├── verification.py      # Signature verification functions
+│   │   └── __init__.py        # Crypto package initializer
 │   ├── utils
-│   │   ├── file_operations.py
-│   │   └── logging.py
-│   ├── app.py
-│   └── __init__.py
+│   │   ├── file_operations.py  # File operations utilities
+│   │   ├── logging_util.py     # Logging utilities
+│   │   └── __init__.py        # Utils package initializer
+│   └── config
+│       └── settings.py        # Configuration settings
 ├── tests
-│   ├── test_algorithms.py
-│   ├── test_hashing.py
-│   ├── test_file_operations.py
-│   └── test_gui.py
-├── requirements.txt
-├── README.md
-└── .gitignore
+│   ├── test_key_generation.py  # Unit tests for key generation
+│   ├── test_signing.py         # Unit tests for signing
+│   ├── test_verification.py     # Unit tests for verification
+│   └── __init__.py            # Tests package initializer
+├── requirements.txt            # Project dependencies
+├── README.md                   # Project documentation
+└── .gitignore                  # Files to ignore in version control
 ```
 
-## Setup Instructions
+## Installation
 
 1. Clone the repository:
    ```
-   git clone <repository-url>
+   git clone https://github.com/yourusername/digital-signature-app.git
    ```
 2. Navigate to the project directory:
    ```
@@ -60,16 +58,17 @@ digital-signature-app
 
 ## Usage
 
-1. Run the application:
-   ```
-   python src/app.py
-   ```
-2. Use the GUI to select algorithms, generate keys, sign messages, and verify signatures.
+Run the application using:
+```
+python src/main.py
+```
+
+Follow the GUI instructions to generate keys, sign messages, and verify signatures.
 
 ## Contributing
 
-Contributions are welcome! Please submit a pull request or open an issue for any enhancements or bug fixes.
+Contributions are welcome! Please open an issue or submit a pull request for any enhancements or bug fixes.
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for more details.
+This project is licensed under the MIT License. See the LICENSE file for details.
