@@ -52,8 +52,8 @@ def generate_prime(bits):
 
 # --- RSA key generation ---
 def generate_keys(bits=512):
-    p = generate_prime(bits)
-    q = generate_prime(bits)
+    p = generate_prime(bits // 2)
+    q = generate_prime(bits // 2)
     n = p * q
     phi = (p - 1) * (q - 1)
 

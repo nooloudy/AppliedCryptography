@@ -20,3 +20,94 @@
 2025-04-23 12:43:32,645 - ERROR - Verification failed: Signature is invalid.
 2025-04-23 12:43:38,836 - ERROR - Verification failed: Signature is invalid.
 2025-04-23 12:43:43,967 - INFO - Signature verified successfully with ElGamal.
+2025-04-23 12:49:17,867 - INFO - RSA keys generated and saved.
+2025-04-23 12:49:26,427 - INFO - Message signed and saved with RSA using SHA-256.
+2025-04-23 12:49:27,736 - INFO - Signature verified successfully with RSA.
+2025-04-23 12:49:42,423 - INFO - Selected file: C:/Users/User/Desktop/AppliedCryptography/lab7-8/digital_signature_app/signatures/RSA_signature_20250423_124925.txt
+2025-04-23 12:49:46,615 - INFO - File signed and saved with RSA using SHA-256.
+2025-04-23 12:49:51,861 - INFO - Selected file: C:/Users/User/Desktop/AppliedCryptography/lab7-8/digital_signature_app/signatures/RSA_signature_20250423_124019.txt
+2025-04-23 12:49:53,542 - INFO - File signed and saved with RSA using SHA-256.
+2025-04-23 12:50:00,564 - INFO - Selected file: C:/Users/User/Desktop/AppliedCryptography/lab7-8/digital_signature_app/signatures/RSA_signature_20250423_124952.txt
+2025-04-23 12:50:01,964 - INFO - File signed and saved with RSA using SHA-256.
+2025-04-23 12:53:48,660 - INFO - ElGamal keys generated and saved.
+2025-04-23 12:53:53,771 - INFO - Message signed and saved with ElGamal using SHA-256.
+2025-04-23 12:53:57,933 - INFO - Signature verified successfully with ElGamal.
+2025-04-23 12:54:00,261 - ERROR - Verification failed: Signature is invalid.
+2025-04-23 12:54:15,814 - INFO - Selected file: C:/Users/User/Desktop/AppliedCryptography/lab7-8/digital_signature_app/messages/ElGamal_message_20250423_124325.txt
+2025-04-23 12:54:18,752 - INFO - File signed and saved with ElGamal using SHA-256.
+2025-04-23 12:54:26,119 - INFO - Signature verified successfully with ElGamal.
+2025-04-23 12:58:25,907 - INFO - DSA keys generated and saved.
+2025-04-23 12:58:30,057 - INFO - Message signed and saved with DSA using SHA-384.
+2025-04-23 12:58:31,296 - INFO - Signature verified successfully with DSA.
+2025-04-23 12:58:33,102 - ERROR - Verification failed: Signature is invalid.
+2025-04-23 12:58:36,549 - ERROR - Verification failed: Signature is invalid.
+2025-04-23 12:58:38,369 - INFO - Signature verified successfully with DSA.
+2025-04-23 12:58:48,392 - INFO - Selected signature file: C:/Users/User/Desktop/AppliedCryptography/lab7-8/digital_signature_app/signatures/DSA_signature_20250423_125829.txt
+2025-04-23 12:59:50,380 - ERROR - Verification failed: invalid syntax (<string>, line 0)
+2025-04-23 12:59:55,919 - INFO - RSA keys generated and saved.
+2025-04-23 12:59:57,642 - INFO - Message signed and saved with RSA using SHA-256.
+2025-04-23 12:59:58,837 - INFO - Signature verified successfully with RSA.
+2025-04-23 13:00:02,564 - INFO - Selected signature file: C:/Users/User/Desktop/AppliedCryptography/lab7-8/digital_signature_app/signatures/RSA_signature_20250423_125956.txt
+2025-04-23 13:00:07,962 - INFO - Signature verified successfully with RSA.
+2025-04-23 13:01:03,224 - INFO - DSA keys generated and saved.
+2025-04-23 13:01:08,804 - INFO - Message signed and saved with DSA using SHA-384.
+2025-04-23 13:01:09,950 - INFO - Signature verified successfully with DSA.
+2025-04-23 13:01:14,401 - ERROR - Verification failed: eval() arg 1 must be a string, bytes or code object
+2025-04-23 13:01:19,627 - INFO - Selected signature file: C:/Users/User/Desktop/AppliedCryptography/lab7-8/digital_signature_app/signatures/DSA_signature_20250423_125829.txt
+2025-04-23 13:01:20,831 - ERROR - Verification failed: invalid syntax (<string>, line 0)
+2025-04-23 13:01:23,095 - INFO - Selected signature file: C:/Users/User/Desktop/AppliedCryptography/lab7-8/digital_signature_app/signatures/DSA_signature_20250423_130108.txt
+2025-04-23 13:01:24,891 - ERROR - Verification failed: invalid syntax (<string>, line 0)
+2025-04-23 13:01:28,845 - INFO - Selected signature file: C:/Users/User/Desktop/AppliedCryptography/lab7-8/digital_signature_app/signatures/DSA_signature_20250423_130108.txt
+2025-04-23 13:01:30,395 - ERROR - Verification failed: invalid syntax (<string>, line 0)
+2025-04-23 13:01:35,546 - INFO - DSA keys generated and saved.
+2025-04-23 13:01:36,614 - INFO - Message signed and saved with DSA using SHA-384.
+2025-04-23 13:01:37,647 - INFO - Signature verified successfully with DSA.
+2025-04-23 13:01:43,798 - INFO - Selected signature file: C:/Users/User/Desktop/AppliedCryptography/lab7-8/digital_signature_app/signatures/DSA_signature_20250423_130136.txt
+2025-04-23 13:01:44,913 - ERROR - Verification failed: invalid syntax (<string>, line 0)
+2025-04-23 13:02:03,663 - INFO - RSA keys generated and saved.
+2025-04-23 13:02:04,808 - ERROR - Signing failed: Message is empty.
+2025-04-23 13:02:06,717 - INFO - Message signed and saved with RSA using SHA-256.
+2025-04-23 13:02:07,901 - INFO - Signature verified successfully with RSA.
+2025-04-23 13:02:10,720 - INFO - Selected signature file: C:/Users/User/Desktop/AppliedCryptography/lab7-8/digital_signature_app/signatures/RSA_signature_20250423_130206.txt
+2025-04-23 13:02:13,008 - ERROR - Verification failed: eval() arg 1 must be a string, bytes or code object
+2025-04-23 13:02:17,376 - INFO - Selected signature file: C:/Users/User/Desktop/AppliedCryptography/lab7-8/digital_signature_app/signatures/RSA_signature_20250423_130206.txt
+2025-04-23 13:02:21,691 - ERROR - Verification failed: eval() arg 1 must be a string, bytes or code object
+2025-04-23 13:03:30,599 - INFO - RSA keys generated and saved.
+2025-04-23 13:03:33,305 - INFO - Message signed and saved with RSA using SHA-256.
+2025-04-23 13:03:34,656 - INFO - Signature verified successfully with RSA.
+2025-04-23 13:03:38,939 - INFO - Selected signature file: C:/Users/User/Desktop/AppliedCryptography/lab7-8/digital_signature_app/signatures/RSA_signature_20250423_130332.txt
+2025-04-23 13:03:40,171 - INFO - Signature verified successfully with RSA.
+2025-04-23 13:03:45,650 - INFO - RSA keys generated and saved.
+2025-04-23 13:03:47,423 - INFO - Message signed and saved with RSA using SHA-256.
+2025-04-23 13:03:51,810 - INFO - Signature verified successfully with RSA.
+2025-04-23 13:03:54,361 - INFO - Selected signature file: C:/Users/User/Desktop/AppliedCryptography/lab7-8/digital_signature_app/signatures/RSA_signature_20250423_130346.txt
+2025-04-23 13:03:55,614 - INFO - Signature verified successfully with RSA.
+2025-04-23 13:04:09,409 - INFO - RSA keys generated and saved.
+2025-04-23 13:04:11,360 - INFO - Message signed and saved with RSA using SHA-512.
+2025-04-23 13:04:12,660 - INFO - Signature verified successfully with RSA.
+2025-04-23 13:04:15,720 - INFO - Selected signature file: C:/Users/User/Desktop/AppliedCryptography/lab7-8/digital_signature_app/signatures/RSA_signature_20250423_130410.txt
+2025-04-23 13:04:16,898 - INFO - Signature verified successfully with RSA.
+2025-04-23 13:04:24,235 - INFO - DSA keys generated and saved.
+2025-04-23 13:04:25,882 - INFO - Message signed and saved with DSA using SHA-384.
+2025-04-23 13:04:27,180 - INFO - Signature verified successfully with DSA.
+2025-04-23 13:04:31,486 - INFO - Selected signature file: C:/Users/User/Desktop/AppliedCryptography/lab7-8/digital_signature_app/signatures/DSA_signature_20250423_130425.txt
+2025-04-23 13:04:33,959 - ERROR - Verification failed: Invalid signature format. Ensure the file contains a valid tuple (e.g., '(r, s)').
+2025-04-23 13:08:20,196 - INFO - DSA keys generated and saved.
+2025-04-23 13:08:22,386 - INFO - Message signed and saved with DSA using SHA-384.
+2025-04-23 13:08:23,749 - INFO - Signature verified successfully with DSA.
+2025-04-23 13:08:26,219 - ERROR - Verification failed: Signature is invalid.
+2025-04-23 13:08:35,017 - INFO - Selected signature file: C:/Users/User/Desktop/AppliedCryptography/lab7-8/digital_signature_app/signatures/DSA_signature_20250423_130821.txt
+2025-04-23 13:08:42,777 - ERROR - Verification failed: Invalid signature format. Ensure the file contains a valid tuple (e.g., '(r, s)').
+2025-04-23 13:08:52,427 - INFO - ElGamal keys generated and saved.
+2025-04-23 13:08:54,548 - INFO - Message signed and saved with ElGamal using SHA-384.
+2025-04-23 13:08:56,098 - INFO - Signature verified successfully with ElGamal.
+2025-04-23 13:08:58,340 - ERROR - Verification failed: Signature is invalid.
+2025-04-23 13:09:05,424 - INFO - Selected signature file: C:/Users/User/Desktop/AppliedCryptography/lab7-8/digital_signature_app/signatures/ElGamal_signature_20250423_130853.txt
+2025-04-23 13:09:07,479 - ERROR - Verification failed: Invalid signature format. Ensure the file contains a valid tuple (e.g., '(r, s)').
+2025-04-23 13:11:54,677 - INFO - DSA keys generated and saved.
+2025-04-23 13:11:56,816 - ERROR - Signing failed: Message is empty.
+2025-04-23 13:12:00,480 - INFO - Message signed and saved with DSA using SHA-384.
+2025-04-23 13:12:01,679 - INFO - Signature verified successfully with DSA.
+2025-04-23 13:12:05,205 - INFO - Selected signature file: C:/Users/User/Desktop/AppliedCryptography/lab7-8/digital_signature_app/signatures/DSA_signature_20250423_131159.txt
+2025-04-23 13:12:05,754 - INFO - Loaded signature: 
+2025-04-23 13:12:07,051 - ERROR - Verification failed: Invalid signature format. Ensure the file contains a valid tuple (e.g., '(r, s)').

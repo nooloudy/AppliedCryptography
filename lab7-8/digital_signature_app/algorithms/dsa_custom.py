@@ -51,7 +51,7 @@ def generate_prime(bits):
 
 # --- DSA Key Generation ---
 def generate_keys(L=512, N=160):
-    """L — размер p, N — размер q"""
+    """L — size of p, N — size of q"""
     while True:
         q = generate_prime(N)
         for _ in range(10_000):
