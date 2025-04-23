@@ -1,0 +1,22 @@
+# Log file for application operations
+2025-04-23 12:40:05,659 - INFO - RSA keys generated and saved.
+2025-04-23 12:40:11,951 - INFO - RSA keys generated and saved.
+2025-04-23 12:40:20,068 - INFO - Message signed and saved with RSA using SHA-384.
+2025-04-23 12:40:23,466 - INFO - Signature verified successfully with RSA.
+2025-04-23 12:40:26,179 - ERROR - Verification failed: Signature is invalid.
+2025-04-23 12:40:30,577 - ERROR - Verification failed: invalid literal for int() with base 10: '4772997639493557673298516655fdsf19876691649463268711759642944656558692745043526043036187560155850564297016022358699886394648316718332972823094031197177184642447310735974967248141601539550460591368383
+2025-04-23 12:40:44,456 - INFO - DSA keys generated and saved.
+2025-04-23 12:40:51,610 - ERROR - Signing failed: too many values to unpack (expected 3)
+2025-04-23 12:41:20,316 - ERROR - Signing failed: too many values to unpack (expected 3)
+2025-04-23 12:41:23,399 - ERROR - Signing failed: too many values to unpack (expected 3)
+2025-04-23 12:42:53,769 - INFO - DSA keys generated and saved.
+2025-04-23 12:42:59,162 - INFO - Message signed and saved with DSA using SHA-512.
+2025-04-23 12:43:01,340 - INFO - Signature verified successfully with DSA.
+2025-04-23 12:43:03,289 - ERROR - Verification failed: Signature is invalid.
+2025-04-23 12:43:06,886 - ERROR - Verification failed: Signature is invalid.
+2025-04-23 12:43:23,681 - INFO - ElGamal keys generated and saved.
+2025-04-23 12:43:26,484 - INFO - Message signed and saved with ElGamal using SHA-384.
+2025-04-23 12:43:30,473 - INFO - Signature verified successfully with ElGamal.
+2025-04-23 12:43:32,645 - ERROR - Verification failed: Signature is invalid.
+2025-04-23 12:43:38,836 - ERROR - Verification failed: Signature is invalid.
+2025-04-23 12:43:43,967 - INFO - Signature verified successfully with ElGamal.
